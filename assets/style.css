@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+.stApp {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hide Streamlit default elements */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Main container */
+.main-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title styling */
+.title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Upload section */
+.upload-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease-out 0.7s both;
+}
+
+.upload-section:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Button styling */
+.stButton > button {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    margin: 1rem 0;
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(135deg, #ff5252, #ffcc02);
+}
+
+.stButton > button:active {
+    transform: translateY(-1px);
+}
+
+/* Secondary button (reset) */
+.reset-btn > button {
+    background: linear-gradient(135deg, #74b9ff, #0984e3) !important;
+    box-shadow: 0 8px 25px rgba(116, 185, 255, 0.3) !important;
+}
+
+.reset-btn > button:hover {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe) !important;
+    box-shadow: 0 12px 35px rgba(108, 92, 231, 0.4) !important;
+}
+
+/* Image display */
+.image-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1rem;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: scaleUp 0.5s ease-out;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Caption styling */
+.caption-container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.caption-text {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading animation */
+.loading-container {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+}
+
+.loading-text {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* File uploader styling */
+.stFileUploader > div > div > div {
+    background: transparent !important;
+    border: none !important;
+}
+
+.stFileUploader label {
+    color: white !important;
+    font-weight: 500 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Success message styling */
+.stSuccess {
+    background: linear-gradient(135deg, rgba(46, 213, 115, 0.2), rgba(0, 184, 148, 0.2)) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(46, 213, 115, 0.3) !important;
+    color: white !important;
+}
+
+/* Error message styling */
+.stError {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.2), rgba(192, 57, 43, 0.2)) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(231, 76, 60, 0.3) !important;
+    color: white !important;
+}
+
+/* Spinner customization */
+.stSpinner > div {
+    border-top-color: #ff6b6b !important;
+    border-right-color: #ffd93d !important;
+}
+
+/* Feature highlights */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+/* Progress bar styling */
+.stProgress > div > div > div > div {
+    background: linear-gradient(135deg, #ff6b6b, #ffd93d) !important;
+}
+
+/* Selectbox styling */
+.stSelectbox > div > div > div {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+/* Text input styling */
+.stTextInput > div > div > input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+.stTextInput > div > div > input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Sidebar styling */
+.css-1d391kg {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+/* Metric styling */
+.metric-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.metric-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Tabs styling */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 0.5rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 1rem;
+    border: none;
+}
+
+.stTabs [aria-selected="true"] {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .feature-card {
+        padding: 0.8rem;
+    }
+    
+    .feature-icon {
+        font-size: 1.5rem;
+    }
+    
+    .stButton > button {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .upload-section {
+        padding: 1.5rem;
+    }
+    
+    .caption-text {
+        font-size: 1rem;
+    }
+}
